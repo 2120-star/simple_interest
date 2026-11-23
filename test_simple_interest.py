@@ -1,14 +1,17 @@
 
-from simple_interest import simple_interest
+def calculate_simple_interest(p, r, t):
+    return (p * r * t) / 100
 
 
-def test_simple_interest():
-    assert simple_interest(10000, 5, 2) == 1000
+def main():
+    p = float(input("Enter the principal amount: "))
+    r = float(input("Enter the rate of interest: "))
+    t = float(input("Enter the time in years: "))
+
+    si = calculate_simple_interest(p, r, t)
+
+    print("Simple Interest =", si)
 
 
-def test_zero_principal():
-    assert simple_interest(0, 5, 2) == 0
-
-
-def test_zero_rate():
-    assert simple_interest(10000, 0, 2) == 0
+if __name__ == "__main__":
+    main()
